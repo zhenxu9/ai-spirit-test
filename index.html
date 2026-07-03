@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>测试你的 AI 灵根</title>
+    <meta
+      name="description"
+      content="8 道轻松小题，测出你的 AI 灵根与开发者画像。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell" id="app">
+      <section class="screen start-screen is-active" id="start-screen" aria-labelledby="start-title">
+        <div class="poster-pattern" aria-hidden="true"></div>
+        <div class="brand-bar">
+          <img src="./assets/brand-logos.png" alt="AI大学堂" />
+        </div>
+        <div class="start-content">
+          <h1 id="start-title">测测你的<br />AI灵根</h1>
+          <p class="intro">
+            8道题目，探索你的AI开发者人格
+          </p>
+          <div class="start-cta-row">
+            <span aria-hidden="true">&gt;&gt;</span>
+            <button class="primary-action start-action" id="start-button" type="button">立即测试</button>
+            <span aria-hidden="true">&lt;&lt;</span>
+          </div>
+          <div class="mascot-stage" aria-hidden="true">
+            <img class="lobster-mascot" src="./assets/lobster-mascot.png" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section class="screen quiz-screen" id="quiz-screen" aria-labelledby="question-title">
+        <div class="poster-pattern" aria-hidden="true"></div>
+        <div class="brand-bar">
+          <img src="./assets/brand-logos.png" alt="AI大学堂" />
+        </div>
+        <div class="quiz-top">
+          <button class="ghost-button" id="back-button" type="button">上一题</button>
+          <span class="question-count" id="question-count">1 / 8</span>
+        </div>
+
+        <div class="progress-track" aria-label="答题进度">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+
+        <article class="question-card">
+          <p class="eyebrow" id="question-kicker">第 1 题</p>
+          <h2 id="question-title"></h2>
+          <div class="option-list" id="option-list"></div>
+        </article>
+      </section>
+
+      <section class="screen result-screen" id="result-screen" aria-labelledby="result-title">
+        <div class="poster-pattern" aria-hidden="true"></div>
+        <div class="brand-bar">
+          <img src="./assets/brand-logos.png" alt="AI大学堂" />
+        </div>
+        <div class="result-card pass-report" id="result-card">
+          <div class="report-mascot" aria-hidden="true">
+            <img src="./assets/lobster-mascot.png" alt="" />
+          </div>
+          <section class="pass-window" aria-label="AI开发者人格报告">
+            <div class="window-bar" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+              <strong>×</strong>
+            </div>
+            <p class="result-badge">AI开发者人格报告</p>
+            <h2 id="result-title"></h2>
+            <div class="result-orb" id="result-orb" aria-hidden="true"></div>
+            <div class="report-copy">
+              <p class="persona report-explain" id="result-persona"></p>
+              <section class="direction-block">
+                <h3>适合方向</h3>
+                <p class="direction-text" id="result-direction"></p>
+              </section>
+            </div>
+          </section>
+        </div>
+
+        <div class="bottom-bar result-actions">
+          <button class="secondary-action" id="copy-button" type="button">复制文案</button>
+          <button class="primary-action" id="share-image-button" type="button">分享图片</button>
+          <button class="primary-action" id="restart-button" type="button">重新测试</button>
+        </div>
+      </section>
+
+      <div class="share-modal" id="share-modal" aria-hidden="true">
+        <div class="share-modal-panel" role="dialog" aria-modal="true" aria-labelledby="share-poster-title">
+          <button class="modal-close" id="close-share-button" type="button" aria-label="关闭分享图片">×</button>
+          <article class="share-poster pass-report" id="share-poster">
+            <img class="poster-logo" src="./assets/brand-logos.png" alt="AI大学堂" />
+            <div class="report-mascot poster-mascot" aria-hidden="true">
+              <img src="./assets/lobster-mascot.png" alt="" />
+            </div>
+            <section class="pass-window poster-window" aria-label="AI开发者人格报告">
+              <div class="window-bar" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <strong>×</strong>
+              </div>
+              <p class="result-badge">AI开发者人格报告</p>
+              <h2 id="share-poster-title"></h2>
+              <div class="result-orb poster-orb" aria-hidden="true"></div>
+              <div class="report-copy poster-copy">
+                <p class="report-explain" id="share-poster-persona"></p>
+                <section class="direction-block">
+                  <h3>适合方向</h3>
+                  <p id="share-poster-direction"></p>
+                </section>
+              </div>
+              <div class="poster-qr-line">
+                <div class="poster-qr-wrap">
+                  <img id="poster-qr" alt="测试二维码" />
+                </div>
+                <strong>扫码测试你的AI开发者灵根</strong>
+              </div>
+            </section>
+          </article>
+          <p class="poster-tip">长按图片区域保存，或截图分享给朋友</p>
+          <p class="manual-copy-text" id="manual-copy-text" hidden></p>
+        </div>
+      </div>
+
+      <div class="toast" id="toast" role="status" aria-live="polite">已复制</div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
